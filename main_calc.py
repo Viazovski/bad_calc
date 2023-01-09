@@ -57,7 +57,6 @@ while True:
     elif oper == '/':
         try:
             print(int(f_num) / int(s_num))
-            break
         except ZeroDivisionError:
             print('Делить на 0 нельзя!')
     y = input('''Если хотите продолжить, введите "y" или "да"
