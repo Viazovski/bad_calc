@@ -1,4 +1,4 @@
-CONDITION = '''Выберите операцию: 
+CONDITION = '''Выберите операцию:
 Сложить: +
 Вычесть: -
 Умножить: *
@@ -55,10 +55,11 @@ while True:
     elif oper == '*':
         print(int(f_num) * int(s_num))
     elif oper == '/':
-        if int(s_num) != 0:
+        try:
             print(int(f_num) / int(s_num))
-        else:
-            print('Деление на ноль')
+            break
+        except ZeroDivisionError:
+            print('Делить на 0 нельзя!')
     y = input('''Если хотите продолжить, введите "y" или "да"
     Если хотите выйти, введите "no" или "нет"
                ''')
