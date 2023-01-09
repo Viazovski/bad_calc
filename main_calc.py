@@ -15,39 +15,37 @@ INSTRUCTION = '''Данный калькулятор является прост
 ---
 Для того, чтобы снова ввести число, введите 'U' (от англ. update - обновлять)
 '''
+
+def quit_programm(Q):
+    if f_num == 'Q' or s_num == 'Q' or oper == 'Q':
+        print('До свидания!')
+        quit()
+
+f_num = None
+s_num = None
+oper = None
+
 print(INSTRUCTION)
 while True:
     f_num = input('Введите первое число: ')
-    if f_num == 'Q':
-        print(GOODBYE)
-        break
+    quit_programm(f_num)
     while f_num.isdigit() == False:
         print('Вы ввели неверное значение')
         f_num = input('Введите Q для выхода или введите первое число: ')
-        if f_num == 'Q':
-            print(GOODBYE)
-            quit()
+        quit_programm(f_num)
     print(CONDITION)
     oper = input()
-    if oper == 'Q':
-        print(GOODBYE)
-        quit()
+    quit_programm(oper)
     while oper not in('+', '-', '*', '/', 'Q'):
         print(CONDITION)
         oper = input()
-        if oper == 'Q':
-            print(GOODBYE)
-            quit()
+        quit_programm(oper)
     s_num = input('Введите второе число: ')
-    if s_num == 'Q':
-        print(GOODBYE)
-        break
+    quit_programm(s_num)
     while s_num.isdigit() == False:
         print('Вы ввели неверное значение')
         s_num = input('Введите Q для выхода или введите второе число: ')
-        if s_num == 'Q':
-            print(GOODBYE)
-            quit()
+        quit_programm(s_num)
     if oper == '+':
         print(int(f_num) + int(s_num))
     elif oper == '-':
